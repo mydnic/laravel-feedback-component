@@ -1,0 +1,4 @@
+/node_modules
+/vendor
+npm-debug.log
+yarn-error.log
