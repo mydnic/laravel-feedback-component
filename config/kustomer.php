@@ -3,14 +3,88 @@
 return [
     /*
     |--------------------------------------------------------------------------
-    | Kustomer Logo
+    | Kustomer Feedback Icon
     |--------------------------------------------------------------------------
     |
     | This is the path to the image that appears in the fixed bubble on your
-    | layout page. You can change this to use your own logo or image.
+    | layout page. You can change this to use your own image.
     | This is an absolute path that points to your public directory.
     |
     */
 
-    'logo' => '/vendor/kustomer/img/logo.png',
+    'icon' => '/vendor/kustomer/assets/icon.svg',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application Logo
+    |--------------------------------------------------------------------------
+    |
+    | This is the path to the image that appears in the header of the popup
+    | when the feedback popup is open. By default a dummy image is displayed
+    | You can override this path to your own logo.
+    |
+    */
+
+    'logo' => '/vendor/kustomer/assets/logo.svg',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Popup Title
+    |--------------------------------------------------------------------------
+    |
+    | This is the text that will appear below the logo in the feedback popup
+    |
+    */
+
+    'title' => 'Help us improve our website',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Colors
+    |--------------------------------------------------------------------------
+    |
+    | An array of colors that will be used to style the feedback components.
+    | The primary color will be used for the floating bubble background
+    | as well as for the text title in the popup header.
+    |
+     */
+
+    'colors' => [
+        'primary' => 'rgb(222, 48, 42)',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Feedback Types
+    |--------------------------------------------------------------------------
+    |
+    | Here you can specify the "questions" and feedbacks types that your
+    | visitors will be able to choose inside the feedback popup.
+    | You can add and remove as many as you like. However, we think
+    | three feedback types is enough and don't supercharge the popup.
+    |
+    | Each keys (eg. "like", "dislike", etc.) will be the feedback "type"
+    | and will be save into your database under the "type" column.
+    | This allows you to filter through feedback types.
+    |
+     */
+
+    'feedbacks' => [
+        'like' => [
+            'label' => 'I like something',
+            'icon' => '/vendor/kustomer/assets/like.svg'
+        ],
+        'dislike' => [
+            'label' => 'I don\'t like something',
+            'icon' => '/vendor/kustomer/assets/dislike.svg'
+        ],
+        'suggestion' => [
+            'label' => 'I have a suggestion',
+            'icon' => '/vendor/kustomer/assets/idea.svg'
+        ],
+        // 'bug' => [
+        //     'label' => 'I found a bug',
+        //     'icon' => '/vendor/kustomer/assets/bug.svg'
+        // ],
+    ],
 ];

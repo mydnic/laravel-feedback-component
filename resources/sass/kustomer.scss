@@ -1,3 +1,113 @@
 .kustomer-feedback-component {
-
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+    &:not(.is-open):hover {
+        .kustomer-tooltip {
+            opacity: 1;
+            transform: translateX(-5px);
+            transition: opacity .3s ease-out, transform .3s ease-out;
+            visibility: visible;
+        }
+    }
+    &.is-open {
+        .kustomer-popup {
+            opacity: 1;
+            top: 0px;
+            transform: translateY(-100%);
+        }
+    }
+    .kustomer-tooltip {
+        width: 111px;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        font-size: .8em;
+        right: 70px;
+        top: 25px;
+        line-height: 1em;
+        background-color: #5D6575;
+        color: #fff;
+        letter-spacing: .1em;
+        border-radius: 1em;
+        padding: .55em 1em;
+    }
+    .kustomer-trigger {
+        cursor: pointer;
+        border-radius: 1000px;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        box-shadow: 0 2px 8px rgba(5,43,81,.1);
+        img {
+            max-width: 100%;
+        }
+    }
+    .kustomer-popup {
+        transition: opacity .3s ease-out, transform .3s ease-out;
+        position: absolute;
+        box-shadow: 0 2px 8px rgba(5,43,81,.1);
+        opacity: 0;
+        background-color: #fff;
+        width: 350px;
+        min-height: 400px;
+        top: 80px;
+        right: 10px;
+        border-radius: 10px;
+    }
+    .kustomer-header {
+        padding: 30px 0;
+        border-bottom: 1px solid #e0e0e0;
+        .kustomer-logo {
+            height: 60px;
+            text-align: center;
+            margin: 0 auto;
+            width: 300px;
+            img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+        h1 {
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: .02em;
+            padding: 0 30px;
+            white-space: nowrap;
+            text-align: center;
+            margin-bottom: 0;
+        }
+    }
+    section.kustomer-feedbacks {
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin: 0;
+        padding: 20px 0;
+        .kustomer-feedback {
+            padding: 20px 40px;
+            cursor: pointer;
+            img {
+                width: 25px;
+                display: inline-block;
+                margin-right: 15px;
+            }
+            p {
+                font-size: 16px;
+                padding-left: 15px;
+                font-weight: bold;
+                display: inline-block;
+                margin: 0;
+                padding: 0;
+            }
+            &:hover {
+                background-color: hsl(210, 9%, 96%);
+            }
+        }
+    }
 }
