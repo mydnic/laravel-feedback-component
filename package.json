@@ -15,10 +15,5 @@
         "laravel-mix": "^2.0",
         "lodash": "^4.17.4",
         "vue": "^2.5.7"
-    },
-    "dependencies": {
-        "laravel-mix-purgecss": "^3.0.0",
-        "laravel-mix-tailwind": "^0.1.0",
-        "tailwindcss": "^0.7.2"
     }
 }

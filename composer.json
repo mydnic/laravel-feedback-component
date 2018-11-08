@@ -22,6 +22,13 @@
             "Mydnic\\Kustomer\\Test\\": "tests"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mydnic\\Kustomer\\KustomerServiceProvider"
+            ]
+        }
+    },
     "require": {
         "laravel/framework": "~5",
         "illuminate/database": "~5.5.0|~5.6.0"
