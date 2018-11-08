@@ -2,6 +2,7 @@
 
 namespace Mydnic\Kustomer;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class KustomerServiceProvider extends ServiceProvider
@@ -68,9 +69,26 @@ class KustomerServiceProvider extends ServiceProvider
     {
         return [
             'namespace' => 'Mydnic\Kustomer\Http\Controllers',
-            'as' => 'kustomer.api',
+            'as' => 'kustomer.api.',
             'prefix' => 'kustomer-api',
             'middleware' => 'api',
         ];
+    }
+
+    /**
+     * Register any package services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/kustomer.php',
+            'kustomer'
+        );
+
+        $this->commands([
+            Console\PublishCommand::class,
+        ]);
     }
 }
