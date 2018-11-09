@@ -15,10 +15,12 @@
                     name="message"
                     id="message"
                     placeholder="Type your feedback here..."
+                    v-model="message"
                     required
                 ></textarea>
                 <button type="submit"
                     :style="{'background-color': params.colors.primary}"
+                    :class="{'is-loading': isLoading}"
                 >Send feedback</button>
             </form>
         </div>
@@ -28,5 +30,28 @@
 <script>
 export default {
     props: ['feedback', 'params'],
+
+    data() {
+        return {
+            message: null,
+            isLoading: false,
+        }
+    },
+
+    methods: {
+        submit() {
+            this.isLoading = true;
+            axios.post('/kustomer-api/feedback', {
+                type: this.feedback.type,
+                message: this.message
+            })
+            .then(response => {
+                this.isLoading = false;
+            })
+            .catch(error => {
+                this.isLoading = false;
+            })
+        }
+    }
 }
 </script>
