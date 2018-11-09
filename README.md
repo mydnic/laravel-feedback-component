@@ -11,7 +11,6 @@ Laravel Kustomer is an open-source and customizable alternative.
 ## License
 
 Laravel Kustomer is an open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
-In this project you will find some [svg icons](https://github.com/mydnic/laravel-kustomer/tree/master/public/assets) that come from [FlatIcon](https://www.flaticon.com)
 
-You're free to change them in your own project.
+In this project you will find some [svg icons](https://github.com/mydnic/laravel-kustomer/tree/master/public/assets) that come from [FlatIcon](https://www.flaticon.com). You're free to change them in your own project.
 
