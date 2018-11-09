@@ -71,20 +71,24 @@ return [
 
     'feedbacks' => [
         'like' => [
-            'label' => 'I like something',
-            'icon' => '/vendor/kustomer/assets/like.svg'
+            'title' => 'I like something',
+            'icon' => '/vendor/kustomer/assets/like.svg',
+            'label' => 'What did you like ?',
         ],
         'dislike' => [
-            'label' => 'I don\'t like something',
-            'icon' => '/vendor/kustomer/assets/dislike.svg'
+            'title' => 'I don\'t like something',
+            'icon' => '/vendor/kustomer/assets/dislike.svg',
+            'label' => 'What did you dislike ?',
         ],
         'suggestion' => [
-            'label' => 'I have a suggestion',
-            'icon' => '/vendor/kustomer/assets/idea.svg'
+            'title' => 'I have a suggestion',
+            'icon' => '/vendor/kustomer/assets/idea.svg',
+            'label' => 'What is your suggestion ?',
         ],
         // 'bug' => [
-        //     'label' => 'I found a bug',
-        //     'icon' => '/vendor/kustomer/assets/bug.svg'
+        //     'title' => 'I found a bug',
+        //     'icon' => '/vendor/kustomer/assets/bug.svg',
+        //     'label' => 'Please explain what happened',
         // ],
     ],
 ];

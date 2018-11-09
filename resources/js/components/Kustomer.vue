@@ -6,21 +6,14 @@
         <div class="kustomer-trigger"
             @click="toggle"
             :style="{'background-color': params.colors.primary}"
+            :class="{
+                'is-kustomer-trigger-spinning': isSpinning && isFeedbackPopupOpen,
+                'is-kustomer-trigger-spinning-reverse': isSpinning && !isFeedbackPopupOpen,
+            }"
         >
-            <img :src="icon" alt="Feeback">
+            <img :src="icon" alt="Give feedback">
         </div>
-        <div class="kustomer-popup">
-            <kustomer-header>
-                <img slot="logo" :src="params.logo">
-                <h1 slot="title"
-                    v-text="params.title"
-                    :style="{'color': params.colors.primary}"
-                ></h1>
-            </kustomer-header>
-            <kustomer-feedbacks
-                :feedbacks="params.feedbacks"
-            ></kustomer-feedbacks>
-        </div>
+        <kustomer-popup :params="params"></kustomer-popup>
     </div>
 </template>
 
@@ -31,28 +24,29 @@ export default {
     data() {
         return {
             isFeedbackPopupOpen: false,
+            icon: this.params.icon,
+            isSpinning: false,
         }
     },
 
     methods: {
         toggle() {
             this.isFeedbackPopupOpen = ! this.isFeedbackPopupOpen;
-        }
-    },
-
-    computed: {
-        icon() {
-            if (this.isFeedbackPopupOpen) {
-                return '/vendor/kustomer/assets/close.svg';
-            } else {
-                return this.params.icon;
-            }
-        }
+            this.changeIcon();
+        },
+        changeIcon() {
+            this.isSpinning = true;
+            setTimeout(() => {
+                this.icon = this.isFeedbackPopupOpen ?
+                    '/vendor/kustomer/assets/close.svg' :
+                    this.params.icon;
+            }, 250);
+            setTimeout(() => this.isSpinning = false, 500);
+        },
     },
 
     components: {
-        'kustomer-header': require('./Kustomer/Header.vue'),
-        'kustomer-feedbacks': require('./Kustomer/Feedbacks.vue')
+        'kustomer-popup': require('./Partials/Popup.vue'),
     }
 }
 </script>

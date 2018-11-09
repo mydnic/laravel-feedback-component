@@ -1,4 +1,8 @@
 .kustomer-feedback-component {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -11,10 +15,10 @@
   opacity: 1;
   -webkit-transform: translateX(-5px);
           transform: translateX(-5px);
-  -webkit-transition: opacity .3s ease-out, -webkit-transform .3s ease-out;
-  transition: opacity .3s ease-out, -webkit-transform .3s ease-out;
-  transition: opacity .3s ease-out, transform .3s ease-out;
-  transition: opacity .3s ease-out, transform .3s ease-out, -webkit-transform .3s ease-out;
+  -webkit-transition: opacity .5s ease-out, -webkit-transform .5s ease-out;
+  transition: opacity .5s ease-out, -webkit-transform .5s ease-out;
+  transition: opacity .5s ease-out, transform .5s ease-out;
+  transition: opacity .5s ease-out, transform .5s ease-out, -webkit-transform .5s ease-out;
   visibility: visible;
 }
 
@@ -55,11 +59,21 @@
   max-width: 100%;
 }
 
+.kustomer-feedback-component .kustomer-trigger.is-kustomer-trigger-spinning {
+  -webkit-animation: spin .5s ease-in-out;
+          animation: spin .5s ease-in-out;
+}
+
+.kustomer-feedback-component .kustomer-trigger.is-kustomer-trigger-spinning-reverse {
+  -webkit-animation: spin-reverse .5s ease-in-out;
+          animation: spin-reverse .5s ease-in-out;
+}
+
 .kustomer-feedback-component .kustomer-popup {
-  -webkit-transition: opacity .3s ease-out, -webkit-transform .3s ease-out;
-  transition: opacity .3s ease-out, -webkit-transform .3s ease-out;
-  transition: opacity .3s ease-out, transform .3s ease-out;
-  transition: opacity .3s ease-out, transform .3s ease-out, -webkit-transform .3s ease-out;
+  -webkit-transition: opacity .5s ease-out, -webkit-transform .5s ease-out;
+  transition: opacity .5s ease-out, -webkit-transform .5s ease-out;
+  transition: opacity .5s ease-out, transform .5s ease-out;
+  transition: opacity .5s ease-out, transform .5s ease-out, -webkit-transform .5s ease-out;
   position: absolute;
   -webkit-box-shadow: 0 2px 8px rgba(5, 43, 81, 0.1);
           box-shadow: 0 2px 8px rgba(5, 43, 81, 0.1);
@@ -70,26 +84,27 @@
   top: 80px;
   right: 10px;
   border-radius: 10px;
+  overflow: hidden;
 }
 
-.kustomer-feedback-component .kustomer-header {
+.kustomer-feedback-component .kustomer-popup .kustomer-header {
   padding: 30px 0;
   border-bottom: 1px solid #e0e0e0;
 }
 
-.kustomer-feedback-component .kustomer-header .kustomer-logo {
+.kustomer-feedback-component .kustomer-popup .kustomer-header .kustomer-logo {
   height: 60px;
   text-align: center;
   margin: 0 auto;
   width: 300px;
 }
 
-.kustomer-feedback-component .kustomer-header .kustomer-logo img {
+.kustomer-feedback-component .kustomer-popup .kustomer-header .kustomer-logo img {
   max-width: 100%;
   max-height: 100%;
 }
 
-.kustomer-feedback-component .kustomer-header h1 {
+.kustomer-feedback-component .kustomer-popup .kustomer-header h1 {
   margin-top: 30px;
   font-size: 18px;
   font-weight: 400;
@@ -100,7 +115,11 @@
   margin-bottom: 0;
 }
 
-.kustomer-feedback-component section.kustomer-feedbacks {
+.kustomer-feedback-component .kustomer-popup .kustomer-container {
+  position: relative;
+}
+
+.kustomer-feedback-component .kustomer-popup .kustomer-container section.kustomer-feedbacks {
   min-height: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -116,18 +135,21 @@
   padding: 20px 0;
 }
 
-.kustomer-feedback-component section.kustomer-feedbacks .kustomer-feedback {
+.kustomer-feedback-component .kustomer-popup .kustomer-container section.kustomer-feedbacks .kustomer-feedback {
   padding: 20px 40px;
   cursor: pointer;
+  -webkit-transition: background-color .3s ease-out;
+  transition: background-color .3s ease-out;
 }
 
-.kustomer-feedback-component section.kustomer-feedbacks .kustomer-feedback img {
+.kustomer-feedback-component .kustomer-popup .kustomer-container section.kustomer-feedbacks .kustomer-feedback img {
   width: 25px;
+  max-height: 25px;
   display: inline-block;
   margin-right: 15px;
 }
 
-.kustomer-feedback-component section.kustomer-feedbacks .kustomer-feedback p {
+.kustomer-feedback-component .kustomer-popup .kustomer-container section.kustomer-feedbacks .kustomer-feedback p {
   font-size: 16px;
   padding-left: 15px;
   font-weight: bold;
@@ -136,7 +158,123 @@
   padding: 0;
 }
 
-.kustomer-feedback-component section.kustomer-feedbacks .kustomer-feedback:hover {
+.kustomer-feedback-component .kustomer-popup .kustomer-container section.kustomer-feedbacks .kustomer-feedback:hover {
   background-color: #f4f5f6;
+}
+
+.kustomer-feedback-component .kustomer-popup .kustomer-container section.kustomer-form {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+  background-color: #ffffff;
+}
+
+.kustomer-feedback-component .kustomer-popup .kustomer-container section.kustomer-form.is-open {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.kustomer-feedback-component .kustomer-popup .kustomer-container section.kustomer-form .kustomer-back {
+  height: 45px;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  -webkit-transition: background-color .3s ease-out;
+  transition: background-color .3s ease-out;
+}
+
+.kustomer-feedback-component .kustomer-popup .kustomer-container section.kustomer-form .kustomer-back:hover {
+  background-color: #f4f5f6;
+}
+
+.kustomer-feedback-component .kustomer-popup .kustomer-container section.kustomer-form .kustomer-back img {
+  max-height: 100%;
+  width: 25px;
+}
+
+.kustomer-feedback-component .kustomer-popup .kustomer-container section.kustomer-form h2 {
+  width: 270px;
+  margin: 0 auto;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.kustomer-feedback-component .kustomer-popup .kustomer-container section.kustomer-form form {
+  width: 270px;
+  margin: 0 auto;
+  text-align: right;
+}
+
+.kustomer-feedback-component .kustomer-popup .kustomer-container section.kustomer-form form textarea {
+  color: #808080;
+  width: 100%;
+  resize: none;
+  outline: none;
+  border: 0;
+  padding: 0 10px 0 0;
+  background-color: transparent;
+  overflow: hidden;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  margin-bottom: 30px;
+}
+
+.kustomer-feedback-component .kustomer-popup .kustomer-container section.kustomer-form form button {
+  color: #fff;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  font-weight: 700;
+  border-radius: .25rem;
+  cursor: pointer;
+  background: transparent;
+  -webkit-appearance: button;
+  text-transform: none;
+  overflow: visible;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.15;
+  margin: 0;
+  border: 0 solid #dae1e7;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+  }
+}
+
+@-webkit-keyframes spin-reverse {
+  100% {
+    -webkit-transform: rotate(-720deg);
+            transform: rotate(-720deg);
+  }
+}
+
+@keyframes spin-reverse {
+  100% {
+    -webkit-transform: rotate(-720deg);
+            transform: rotate(-720deg);
+  }
 }
 

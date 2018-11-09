@@ -1,4 +1,5 @@
 .kustomer-feedback-component {
+    user-select: none;
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -9,7 +10,7 @@
         .kustomer-tooltip {
             opacity: 1;
             transform: translateX(-5px);
-            transition: opacity .3s ease-out, transform .3s ease-out;
+            transition: opacity .5s ease-out, transform .5s ease-out;
             visibility: visible;
         }
     }
@@ -45,9 +46,15 @@
         img {
             max-width: 100%;
         }
+        &.is-kustomer-trigger-spinning {
+            animation: spin .5s ease-in-out;
+        }
+        &.is-kustomer-trigger-spinning-reverse {
+            animation: spin-reverse .5s ease-in-out;
+        }
     }
     .kustomer-popup {
-        transition: opacity .3s ease-out, transform .3s ease-out;
+        transition: opacity .5s ease-out, transform .5s ease-out;
         position: absolute;
         box-shadow: 0 2px 8px rgba(5,43,81,.1);
         opacity: 0;
@@ -57,57 +64,148 @@
         top: 80px;
         right: 10px;
         border-radius: 10px;
-    }
-    .kustomer-header {
-        padding: 30px 0;
-        border-bottom: 1px solid #e0e0e0;
-        .kustomer-logo {
-            height: 60px;
-            text-align: center;
-            margin: 0 auto;
-            width: 300px;
-            img {
-                max-width: 100%;
-                max-height: 100%;
+        overflow: hidden;
+        .kustomer-header {
+            padding: 30px 0;
+            border-bottom: 1px solid #e0e0e0;
+            .kustomer-logo {
+                height: 60px;
+                text-align: center;
+                margin: 0 auto;
+                width: 300px;
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+            h1 {
+                margin-top: 30px;
+                font-size: 18px;
+                font-weight: 400;
+                letter-spacing: .02em;
+                padding: 0 30px;
+                white-space: nowrap;
+                text-align: center;
+                margin-bottom: 0;
             }
         }
-        h1 {
-            margin-top: 30px;
-            font-size: 18px;
-            font-weight: 400;
-            letter-spacing: .02em;
-            padding: 0 30px;
-            white-space: nowrap;
-            text-align: center;
-            margin-bottom: 0;
-        }
-    }
-    section.kustomer-feedbacks {
-        min-height: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        margin: 0;
-        padding: 20px 0;
-        .kustomer-feedback {
-            padding: 20px 40px;
-            cursor: pointer;
-            img {
-                width: 25px;
-                display: inline-block;
-                margin-right: 15px;
-            }
-            p {
-                font-size: 16px;
-                padding-left: 15px;
-                font-weight: bold;
-                display: inline-block;
+        .kustomer-container {
+            position: relative;
+            section.kustomer-feedbacks {
+                min-height: 200px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
                 margin: 0;
-                padding: 0;
+                padding: 20px 0;
+                .kustomer-feedback {
+                    padding: 20px 40px;
+                    cursor: pointer;
+                    transition: background-color .3s ease-out;
+                    img {
+                        width: 25px;
+                        max-height: 25px;
+                        display: inline-block;
+                        margin-right: 15px;
+                    }
+                    p {
+                        font-size: 16px;
+                        padding-left: 15px;
+                        font-weight: bold;
+                        display: inline-block;
+                        margin: 0;
+                        padding: 0;
+                    }
+                    &:hover {
+                        background-color: hsl(210, 9%, 96%);
+                    }
+                }
             }
-            &:hover {
-                background-color: hsl(210, 9%, 96%);
+            section.kustomer-form {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                transform: translateX(100%);
+                transition: transform .3s ease-out;
+                background-color: #ffffff;
+                &.is-open {
+                    transform: translateX(0);
+                }
+                .kustomer-back {
+                    height: 45px;
+                    width: 100%;
+                    padding: 10px;
+                    cursor: pointer;
+                    transition: background-color .3s ease-out;
+                    &:hover {
+                        background-color: hsl(210, 9%, 96%);
+                    }
+                    img {
+                        max-height: 100%;
+                        width: 25px;
+                    }
+                }
+                h2 {
+                    width: 270px;
+                    margin: 0 auto;
+                    font-size: 15px;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                }
+                form {
+                    width: 270px;
+                    margin: 0 auto;
+                    text-align: right;
+                    textarea {
+                        color: #808080;
+                        width: 100%;
+                        resize: none;
+                        outline: none;
+                        border: 0;
+                        padding: 0 10px 0 0;
+                        background-color: transparent;
+                        overflow: hidden;
+                        border-bottom-style: solid;
+                        border-bottom-width: 3px;
+                        margin-bottom: 30px;
+                    }
+                    button {
+                        color: #fff;
+                        padding-left: 1rem;
+                        padding-right: 1rem;
+                        padding-top: .5rem;
+                        padding-bottom: .5rem;
+                        font-weight: 700;
+                        border-radius: .25rem;
+                        cursor: pointer;
+                        background: transparent;
+                        -webkit-appearance: button;
+                        text-transform: none;
+                        overflow: visible;
+                        font-family: inherit;
+                        font-size: 16px;
+                        line-height: 1.15;
+                        margin: 0;
+                        border: 0 solid #dae1e7;
+                    }
+                }
             }
         }
+    }
+}
+
+// Icon Rotation
+@keyframes spin {
+    100% {
+        transform:rotate(720deg);
+    }
+}
+@keyframes spin-reverse {
+    100% {
+        transform:rotate(-720deg);
     }
 }
