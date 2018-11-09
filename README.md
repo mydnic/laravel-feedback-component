@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/mydnic/laravel-kustomer/master/public/assets/logo.svg" alt="Laravel Kustomer"></p>
+<p align="center"><img src="http://files.mydnic.be/laravel-kustomer/logo.svg" alt="Laravel Kustomer"></p>
 
 ## Introduction
 
