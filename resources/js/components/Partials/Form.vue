@@ -6,7 +6,7 @@
             <img src="/vendor/kustomer/assets/back.svg" alt="Return">
         </div>
 
-        <div v-if="feedback">
+        <div v-if="feedback && !displaySuccessMessage">
             <h2 v-text="feedback.label"></h2>
 
             <form @submit.prevent="submit">
@@ -21,9 +21,14 @@
                 <button type="submit"
                     :style="{'background-color': params.colors.primary}"
                     :class="{'is-loading': isLoading}"
+                    :disabled="isLoading"
                 >Send feedback</button>
             </form>
         </div>
+        <kustomer-success
+            v-if="displaySuccessMessage"
+            :message="params.successMessage"
+        ></kustomer-success>
     </section>
 </template>
 
@@ -35,6 +40,7 @@ export default {
         return {
             message: null,
             isLoading: false,
+            displaySuccessMessage: false,
         }
     },
 
@@ -47,11 +53,16 @@ export default {
             })
             .then(response => {
                 this.isLoading = false;
+                this.displaySuccessMessage = true;
             })
             .catch(error => {
                 this.isLoading = false;
             })
         }
+    },
+
+    components: {
+        'kustomer-success': require('./SuccessMessage.vue')
     }
 }
 </script>

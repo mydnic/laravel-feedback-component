@@ -248,6 +248,31 @@
   line-height: 1.15;
   margin: 0;
   border: 0 solid #dae1e7;
+  position: relative;
+}
+
+.kustomer-feedback-component .kustomer-popup .kustomer-container section.kustomer-form form button.is-loading {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  cursor: not-allowed;
+  opacity: .5;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.kustomer-feedback-component .kustomer-popup .kustomer-container section.kustomer-form form button.is-loading::after {
+  border-color: transparent transparent #fff #fff !important;
+  left: calc(50% - (1em / 2));
+  top: calc(50% - (1em / 2));
+  position: absolute !important;
+  -webkit-animation: loading .5s infinite linear;
+          animation: loading .5s infinite linear;
+  border: 2px solid #dbdbdb;
+  border-radius: 290486px;
+  content: "";
+  display: block;
+  height: 1em;
+  width: 1em;
 }
 
 @-webkit-keyframes spin {
@@ -275,6 +300,30 @@
   100% {
     -webkit-transform: rotate(-720deg);
             transform: rotate(-720deg);
+  }
+}
+
+@-webkit-keyframes loading {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes loading {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
   }
 }
 

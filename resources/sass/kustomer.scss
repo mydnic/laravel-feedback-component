@@ -191,6 +191,27 @@
                         line-height: 1.15;
                         margin: 0;
                         border: 0 solid #dae1e7;
+                        position: relative;
+                        &.is-loading {
+                            box-shadow: none;
+                            cursor: not-allowed;
+                            opacity: .5;
+                            color: transparent !important;
+                            pointer-events: none;
+                            &::after {
+                                border-color: transparent transparent #fff #fff!important;
+                                left: calc(50% - (1em / 2));
+                                top: calc(50% - (1em / 2));
+                                position: absolute !important;
+                                animation: loading .5s infinite linear;
+                                border: 2px solid #dbdbdb;
+                                border-radius: 290486px;
+                                content: "";
+                                display: block;
+                                height: 1em;
+                                width: 1em;
+                            }
+                        }
                     }
                 }
             }
@@ -207,5 +228,14 @@
 @keyframes spin-reverse {
     100% {
         transform:rotate(-720deg);
+    }
+}
+
+@keyframes loading{
+    from{
+        transform:rotate(0);
+    }
+    to{
+        transform:rotate(359deg);
     }
 }
