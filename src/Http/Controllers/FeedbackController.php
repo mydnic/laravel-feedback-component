@@ -16,5 +16,14 @@ class FeedbackController extends Controller
             ],
             'message' => 'required',
         ]);
+
+        $feedback = new Feedback;
+        $feedback->type = $request->type;
+        $feedback->message = $request->message;
+        $feedback->save();
+
+        return response()->json([
+            'created' => true
+        ], 201);
     }
 }
