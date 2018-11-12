@@ -6,7 +6,18 @@
 [![Build Status](https://img.shields.io/travis/com/mydnic/laravel-kustomer.svg)](https://travis-ci.com/mydnic/laravel-kustomer)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
 
-[TL;DR. Installation](#install)
+- [Introduction](#introduction)
+	- [Chatting System](#chatting-system)
+- [Demo](#demo)
+- [Installation & Configuration](#installation--configuration)
+	- [Configuration](#configuration)
+    - [Display the component](#display-the-component)
+    - [Updating Kustomer](#updating-kustomer)
+    - [Include Kustomer assets with your own assets](#include-kustomer-assets-with-your-own-assets)
+        - [Pre requisite](#pre-requisite)
+        - [Install](#install)
+- [Event, Job, Notification, etc](#event-job-notification-etc)
+- [License](#license)
 
 ## Introduction
 
@@ -24,7 +35,6 @@ I'll work on implementing a chatting system in Laravel Kustomer, that will proba
 
 <img src="http://files.mydnic.be/laravel-kustomer/demo.gif" alt="Laravel Kustomer">
 
-<a name="install"></a>
 ## Installation & Configuration
 
 You may use Composer to Install Laravel Kustomer:
