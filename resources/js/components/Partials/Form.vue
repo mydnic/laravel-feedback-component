@@ -61,7 +61,7 @@ export default {
         },
         back() {
             this.displaySuccessMessage = false;
-            this.message = false;
+            this.message = null;
             this.$emit('unselected');
         }
     },
