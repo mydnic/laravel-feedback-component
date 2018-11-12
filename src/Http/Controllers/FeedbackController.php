@@ -14,7 +14,7 @@ class FeedbackController extends Controller
     {
         $data = $this->validates($request);
 
-        $feedback = $this->storeFeedback($data);
+        $feedback = $this->storeFeedback($data, $request);
 
         $this->dispatchEvent($feedback);
 
@@ -30,20 +30,32 @@ class FeedbackController extends Controller
                 'required', Rule::in(array_keys(config('kustomer.feedbacks'))),
             ],
             'message' => 'required',
+            'viewport' => 'array',
         ]);
     }
 
-    private function storeFeedback($data)
+    private function storeFeedback($data, Request $request)
     {
         $feedback = new Feedback;
         $feedback->type = $data['type'];
         $feedback->message = $data['message'];
+        $feedback->user_info = $this->gatherUserInfo($request);
         $feedback->save();
 
         return $feedback;
     }
 
-    public function dispatchEvent(Feedback $feedback)
+    private function gatherUserInfo(Request $request)
+    {
+        return [
+            'url' => $request->server('HTTP_REFERER'),
+            'language' => $request->getPreferredLanguage(),
+            'agent' => $request->server('HTTP_USER_AGENT'),
+            'viewport' => $request->viewport
+        ];
+    }
+
+    private function dispatchEvent(Feedback $feedback)
     {
         event(new NewFeedback($feedback));
     }

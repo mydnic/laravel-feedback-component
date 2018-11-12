@@ -49,7 +49,11 @@ export default {
             this.isLoading = true;
             axios.post('/kustomer-api/feedback', {
                 type: this.feedback.type,
-                message: this.message
+                message: this.message,
+                viewport: {
+                    width: Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
+                    height: Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
+                }
             })
             .then(response => {
                 this.isLoading = false;

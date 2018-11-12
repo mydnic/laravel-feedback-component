@@ -10,5 +10,6 @@ class Feedback extends Model
 
     protected $casts = [
         'reviewed' => 'boolean',
+        'user_info' => 'array'
     ];
 }
