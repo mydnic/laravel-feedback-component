@@ -16,16 +16,59 @@ I'll work on implementing a chatting system in Laravel Kustomer, that will proba
 
 ## Demo
 
-<img src="http://files.mydnic.be/laravel-kustomer/demo.gif" alt="Laravel Kustomer Demo">
+<img src="http://files.mydnic.be/laravel-kustomer/demo.gif" alt="Laravel Kustomer">
 
 <a name="install"></a>
-## Installation
+## Installation & Configuration
 
-### Install via Composer
+You may use Composer to Install Laravel Kustomer:
 
 ```bash
 composer require mydnic/laravel-kustomer
 ```
+
+After installing Laravel Kustomer, publish its assets using the `kustomer:install` Artisan command. After installing Kustomer, you should also run the migrate command:
+
+```bash
+php artisan kustomer:install
+
+php artisan migrate
+```
+
+### Configuration
+
+You can update the configuration of the component as you wish by editing `config/kustomer.php`
+
+### Display the component
+
+In your `public/` directory you'll find compiled css and js files that needs to be included into your html layout.
+
+Include these on the pages you want the components to appear :
+
+```html
+<head>
+    <script src="{{ asset('vendor/kustomer/js/kustomer.js') }}" defer></script>
+    <link href="{{ asset('vendor/kustomer/css/kustomer.css') }}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="kustomer">
+        <kustomer :params="{{ json_encode(config('kustomer')) }}"></kustomer>
+    </div>
+</body>
+```
+
+> **Attention** If you run a VueJS application, you must add the #kustomer container outside your #app container. This is because kustomer runs on its own vue instance by default. If you want to change that, see [TL;DR. Include Kustomer assets with your own assets](#include-assets)
+
+### Updating Kustomer
+
+When updating Kustomer, you should re-publish the assets:
+
+```bash
+php artisan vendor:publish --tag=kustomer-assets --force
+```
+
+<a name="include-assets"></a>
+### Include Kustomer assets with your own assets
 
 ## License
 
