@@ -137,7 +137,7 @@ Then in your vue app:
 Vue.component('kustomer', require('./components/Kustomer/Kustomer.vue'));
 ```
 
-```css
+```scss
 // app.scss
 @import 'kustomer';
 ```
