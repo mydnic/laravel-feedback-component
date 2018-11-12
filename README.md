@@ -18,6 +18,7 @@
         - [Pre requisite](#pre-requisite)
         - [Install](#install)
 - [Retrieve Feedbacks](#retrieve-feedbacks)
+    - [Nova Kustomer](#use-with-laravel-nova)
 - [Event, Job, Notification, etc](#event-job-notification-etc)
 - [License](#license)
 
@@ -28,6 +29,8 @@ Laravel Kustomer allows you to easily implement a Customer Feedback component on
 You probably know a lot of website that use intercom's chatting system, or crisp, chat.io and many more customer chat allowing you to get feedbacks from your website visitors.
 
 Laravel Kustomer is an open-source and customizable alternative that adopts the same layout. Once installed, you will see the component on your website.
+
+We also have a [Nova Tool](https://github.com/mydnic/nova-kustomer) for it!
 
 ### Chatting System
 
@@ -154,7 +157,13 @@ Once a Feedback is stored in your database, you can use your own backoffice to d
 
 The Feedback model works like any other Eloquent model so it's very easy to use in your Laravel Application.
 
-Using Laravel Nova ? I'm working on a package for it 👍
+Using Laravel Nova ? No problem !
+
+### Use With Laravel Nova
+
+If you're using Laravel Nova you will certainly want a tool to visualize all feedbacks that you have received.
+
+You can install the official [Laravel Nova Tool here](https://github.com/mydnic/nova-kustomer).
 
 ## Event, Job, Notification, etc
 
