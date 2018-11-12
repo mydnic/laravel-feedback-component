@@ -44,10 +44,10 @@ You may use Composer to Install Laravel Kustomer:
 composer require mydnic/laravel-kustomer
 ```
 
-After installing Laravel Kustomer, publish its assets using the `kustomer:install` Artisan command. After installing Kustomer, you should also run the migrate command:
+After installing Laravel Kustomer, publish its assets using the `kustomer:publish` Artisan command. After installing Kustomer, you should also run the migrate command:
 
 ```bash
-php artisan kustomer:install
+php artisan kustomer:publish
 
 php artisan migrate
 ```
