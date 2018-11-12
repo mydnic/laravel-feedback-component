@@ -1,6 +1,6 @@
 <p align="center"><img src="http://files.mydnic.be/laravel-kustomer/logo-full.png" alt="Laravel Kustomer"></p>
 
-# Laravel Kustomer
+# Customizable Feedback Component for Laravel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/mydnic/laravel-kustomer.svg)](https://packagist.org/packages/mydnic/laravel-kustomer)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
@@ -17,6 +17,7 @@
     - [Include Kustomer assets with your own assets](#include-kustomer-assets-with-your-own-assets)
         - [Pre requisite](#pre-requisite)
         - [Install](#install)
+- [Retrieve Feedbacks](#retrieve-feedbacks)
 - [Event, Job, Notification, etc](#event-job-notification-etc)
 - [License](#license)
 
@@ -140,6 +141,20 @@ Vue.component('kustomer', require('./components/Kustomer/Kustomer.vue'));
 // app.scss
 @import 'kustomer';
 ```
+
+## Retrieve Feedbacks
+A Feedback essentially has 4 attributes:
+
+- Type : Represents the "category" of the feedback (bug, like, suggestion, etc)
+- Message : the typed message from your visitors
+- User Infos : a JSON column containing all sorts of informations about the user's request
+- Reviewed : a boolean column allowing to mark a feedback as "reviewed"
+
+Once a Feedback is stored in your database, you can use your own backoffice to display and manipulate the datas.
+
+The Feedback model works like any other Eloquent model so it's very easy to use in your Laravel Application.
+
+Using Laravel Nova ? I'm working on a package for it 👍
 
 ## Event, Job, Notification, etc
 
