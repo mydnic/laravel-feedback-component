@@ -1,5 +1,11 @@
 <p align="center"><img src="http://files.mydnic.be/laravel-kustomer/logo-full.png" alt="Laravel Kustomer"></p>
 
+# Laravel Kustomer
+
+[![Build Status](https://img.shields.io/packagist/v/mydnic/laravel-kustomer.svg)](https://travis-ci.org/mydnic/laravel-kustomer)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/mydnic/laravel-kustomer.svg)](https://packagist.org/packages/mydnic/laravel-kustomer)
+
 [TL;DR. Installation](#install)
 
 ## Introduction
