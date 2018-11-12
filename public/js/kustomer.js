@@ -1793,6 +1793,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).catch(function (error) {
                 _this.isLoading = false;
             });
+        },
+        back: function back() {
+            this.displaySuccessMessage = false;
+            this.$emit('unselected');
         }
     },
 
@@ -19846,22 +19850,11 @@ var render = function() {
     "section",
     { staticClass: "kustomer-form", class: { "is-open": _vm.feedback } },
     [
-      _c(
-        "div",
-        {
-          staticClass: "kustomer-back",
-          on: {
-            click: function($event) {
-              _vm.$emit("unselected")
-            }
-          }
-        },
-        [
-          _c("img", {
-            attrs: { src: "/vendor/kustomer/assets/back.svg", alt: "Return" }
-          })
-        ]
-      ),
+      _c("div", { staticClass: "kustomer-back", on: { click: _vm.back } }, [
+        _c("img", {
+          attrs: { src: "/vendor/kustomer/assets/back.svg", alt: "Return" }
+        })
+      ]),
       _vm._v(" "),
       _vm.feedback && !_vm.displaySuccessMessage
         ? _c("div", [

@@ -1,10 +1,22 @@
+$tooltip-text-color: #fff;
+$tooltip-background-color: #5D6575;
+
+$shadow-color: rgba(5,43,81,.1);
+
+$popup-background-color: #fff;
+
+$popup-header-border-color: #e0e0e0;
+
+$trigger-size: 70px;
+$trigger-offset: 30px;
+
 .kustomer-feedback-component {
     user-select: none;
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 70px;
-    height: 70px;
+    bottom: $trigger-offset;
+    right: $trigger-offset;
+    width: $trigger-size;
+    height: $trigger-size;
     padding: 10px;
     &:not(.is-open):hover {
         .kustomer-tooltip {
@@ -30,8 +42,8 @@
         right: 70px;
         top: 25px;
         line-height: 1em;
-        background-color: #5D6575;
-        color: #fff;
+        background-color: $tooltip-background-color;
+        color: $tooltip-text-color;
         letter-spacing: .1em;
         border-radius: 1em;
         padding: .55em 1em;
@@ -42,7 +54,7 @@
         width: 50px;
         height: 50px;
         padding: 10px;
-        box-shadow: 0 2px 8px rgba(5,43,81,.1);
+        box-shadow: 0 2px 8px $shadow-color;
         img {
             max-width: 100%;
         }
@@ -56,9 +68,9 @@
     .kustomer-popup {
         transition: opacity .5s ease-out, transform .5s ease-out;
         position: absolute;
-        box-shadow: 0 2px 8px rgba(5,43,81,.1);
+        box-shadow: 0 2px 8px $shadow-color;
         opacity: 0;
-        background-color: #fff;
+        background-color: $popup-background-color;
         width: 350px;
         min-height: 400px;
         top: 80px;
@@ -67,7 +79,7 @@
         overflow: hidden;
         .kustomer-header {
             padding: 30px 0;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid $popup-header-border-color;
             .kustomer-logo {
                 height: 60px;
                 text-align: center;
@@ -129,7 +141,7 @@
                 left: 0;
                 transform: translateX(100%);
                 transition: transform .3s ease-out;
-                background-color: #ffffff;
+                background-color: $popup-background-color;
                 &.is-open {
                     transform: translateX(0);
                 }
@@ -190,7 +202,7 @@
                         font-size: 16px;
                         line-height: 1.15;
                         margin: 0;
-                        border: 0 solid #dae1e7;
+                        border: 0 solid #fff;
                         position: relative;
                         &.is-loading {
                             box-shadow: none;
@@ -199,7 +211,7 @@
                             color: transparent !important;
                             pointer-events: none;
                             &::after {
-                                border-color: transparent transparent #fff #fff!important;
+                                border-color: transparent transparent #fff #fff !important;
                                 left: calc(50% - (1em / 2));
                                 top: calc(50% - (1em / 2));
                                 position: absolute !important;

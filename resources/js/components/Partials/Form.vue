@@ -2,7 +2,7 @@
     <section class="kustomer-form"
         :class="{'is-open':feedback}"
     >
-        <div class="kustomer-back" @click="$emit('unselected')">
+        <div class="kustomer-back" @click="back">
             <img src="/vendor/kustomer/assets/back.svg" alt="Return">
         </div>
 
@@ -58,6 +58,11 @@ export default {
             .catch(error => {
                 this.isLoading = false;
             })
+        },
+        back() {
+            this.displaySuccessMessage = false;
+            this.message = false;
+            this.$emit('unselected');
         }
     },
 
