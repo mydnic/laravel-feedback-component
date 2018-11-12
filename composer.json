@@ -6,6 +6,8 @@
         "customer",
         "feedback"
     ],
+    "license": "MIT",
+    "homepage": "https://github.com/mydnic/laravel-kustomer",
     "authors": [
         {
             "name": "Clément Rigo",
