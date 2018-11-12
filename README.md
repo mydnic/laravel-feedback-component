@@ -2,9 +2,9 @@
 
 # Laravel Kustomer
 
-[![Build Status](https://img.shields.io/packagist/v/mydnic/laravel-kustomer.svg)](https://travis-ci.org/mydnic/laravel-kustomer)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/mydnic/laravel-kustomer.svg)](https://packagist.org/packages/mydnic/laravel-kustomer)
+[![Build Status](https://img.shields.io/travis/com/mydnic/laravel-kustomer.svg)](https://travis-ci.com/mydnic/laravel-kustomer)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
 
 [TL;DR. Installation](#install)
 
