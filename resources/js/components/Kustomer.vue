@@ -38,7 +38,7 @@ export default {
             this.isSpinning = true;
             setTimeout(() => {
                 this.icon = this.isFeedbackPopupOpen ?
-                    '/vendor/kustomer/assets/close.svg' :
+                    this.params.close :
                     this.params.icon;
             }, 250);
             setTimeout(() => this.isSpinning = false, 500);

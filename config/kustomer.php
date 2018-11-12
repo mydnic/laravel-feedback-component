@@ -16,6 +16,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Close Icon
+    |--------------------------------------------------------------------------
+    |
+    | This is the path to the image that appears in the bubble when the kustomer
+    | popup is open. Clicking this image will close the popup.
+    |
+     */
+
+    'close' => '/vendor/kustomer/assets/close.svg',
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Logo
     |--------------------------------------------------------------------------
     |
