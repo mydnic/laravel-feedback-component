@@ -3,8 +3,9 @@
 # Laravel Kustomer
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/mydnic/laravel-kustomer.svg)](https://packagist.org/packages/mydnic/laravel-kustomer)
-[![Build Status](https://img.shields.io/travis/com/mydnic/laravel-kustomer.svg)](https://travis-ci.com/mydnic/laravel-kustomer)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
+[![Build Status](https://img.shields.io/travis/com/mydnic/laravel-kustomer.svg)](https://travis-ci.com/mydnic/laravel-kustomer)
+[![Code Quality](https://img.shields.io/scrutinizer/g/mydnic/laravel-kustomer.svg)](https://scrutinizer-ci.com/g/mydnic/laravel-kustomer/)
 
 - [Introduction](#introduction)
 	- [Chatting System](#chatting-system)
