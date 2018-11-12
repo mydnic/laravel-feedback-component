@@ -124,6 +124,24 @@ Vue.component('kustomer', require('./components/Kustomer/Kustomer.vue'));
 @import 'kustomer';
 ```
 
+## Event, Job, Notification, etc
+
+When a new feedback is correctly stored, we will dispatch a Laravel Event.
+
+You can listen to this event and trigger any kind of listeners. It's up to you to decide what happens next! You can send an email to the administrator, log some data, or whatever you can think about.
+
+In your `EventServiceProvider` you can update the `$listen` property to add the Kustomer Event.
+
+```php
+protected $listen = [
+    'Mydnic\Kustomer\Events\NewFeedback' => [
+        'App\Listeners\YourOwnListener', // change this
+    ],
+
+    // ...
+];
+```
+
 ## License
 
 Laravel Kustomer is an open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
