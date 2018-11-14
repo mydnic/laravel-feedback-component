@@ -137,7 +137,7 @@ Then in your vue app:
 
 ```javascript
 // app.js
-Vue.component('kustomer', require('./components/Kustomer/Kustomer.vue'));
+Vue.component('kustomer', require('./components/kustomer/Kustomer.vue'));
 ```
 
 ```scss
