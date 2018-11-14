@@ -47,7 +47,7 @@ class PostFeedbackTest extends TestCase
         ]);
         $request->assertStatus(201);
         $feedback = Feedback::latest()->first();
-        $this->assertEquals('data:image/png;base64,iVBORw0KGg', $feedback->user_info['screenshot']);
+        $this->assertNotNull($feedback->user_info['screenshot']);
     }
 
     /** @test */
