@@ -38,7 +38,7 @@ class KustomerServiceProvider extends ServiceProvider
         ], 'kustomer-assets');
 
         $this->publishes([
-            __DIR__ . '/../resources/js/components' => resource_path('js/components/kustomer'),
+            __DIR__ . '/../resources/js/components' => resource_path('js/components/Kustomer'),
         ], 'kustomer-vue-component');
 
         $this->publishes([
