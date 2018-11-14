@@ -114,4 +114,18 @@ return [
         //     'label' => 'Please explain what happened',
         // ],
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Attach Browser Screenshot
+    |--------------------------------------------------------------------------
+    |
+    | If you set this to true, a screenshot of the page will be captured using
+    | https://html2canvas.hertzen.com/ and will be sent with the feedback request
+    | The image will be stored in a "screenshots" folder. Make sure your filesystem
+    | is configured as we will use Laravel Storage facade.
+    |
+     */
+
+    'screenshot' => false,
 ];

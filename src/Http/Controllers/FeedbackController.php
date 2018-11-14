@@ -3,9 +3,10 @@
 namespace Mydnic\Kustomer\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Mydnic\Kustomer\Feedback;
 use Illuminate\Validation\Rule;
 use Illuminate\Routing\Controller;
-use Mydnic\Kustomer\Feedback;
+use Illuminate\Support\Facades\Storage;
 use Mydnic\Kustomer\Events\NewFeedback;
 
 class FeedbackController extends Controller
@@ -51,12 +52,28 @@ class FeedbackController extends Controller
             'url' => $request->server('HTTP_REFERER'),
             'language' => $request->getPreferredLanguage(),
             'agent' => $request->server('HTTP_USER_AGENT'),
-            'viewport' => $request->viewport
+            'viewport' => $request->viewport,
+            'screenshot' => $this->saveScreenshot($request->screenshot),
         ];
     }
 
     private function dispatchEvent(Feedback $feedback)
     {
         event(new NewFeedback($feedback));
+    }
+
+    private function saveScreenshot($base64Screenshot = null)
+    {
+        if ($base64Screenshot and config('kustomer.screenshot')) {
+            $image = $base64Screenshot;
+            $image = str_replace('data:image/png;base64,', '', $image);
+            $image = str_replace(' ', '+', $image);
+            $imageName = microtime(true) . str_random(4) . '.' . 'png';
+            if (Storage::put('screenshots/' . $imageName, base64_decode($image))) {
+                return 'screenshots/' . $imageName;
+            }
+        }
+
+        return null;
     }
 }

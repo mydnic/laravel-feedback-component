@@ -36,6 +36,21 @@ class PostFeedbackTest extends TestCase
     }
 
     /** @test */
+    public function it_saves_the_feedback_with_screenshot()
+    {
+        $this->app->get('config')->set('kustomer.screenshot', true);
+
+        $request = $this->post('/kustomer-api/feedback', [
+            'type' => 'like',
+            'message' => 'test feedback message',
+            'screenshot' => 'data:image/png;base64,iVBORw0KGg'
+        ]);
+        $request->assertStatus(201);
+        $feedback = Feedback::latest()->first();
+        $this->assertEquals('data:image/png;base64,iVBORw0KGg', $feedback->user_info['screenshot']);
+    }
+
+    /** @test */
     public function it_refuses_unavailable_types()
     {
         $this->post('/kustomer-api/feedback', [

@@ -104,6 +104,14 @@ This will also allow you to end up with only one compiled `.js` and `.css` in yo
 However, you should be carefull if you're trying to update the a latest version, because your changes might be lost.
 
 #### Pre requisite
+
+Two npm packages are required:
+
+- axios
+- html2canvas
+
+You can add them via npm or yarn.
+
 We are using axios to make the HTTP request to send the feedback, so make sure axios is installed an configured in your vue app.
 
 As in the Laravel scaffolding javascript, axios should be configured like so:
