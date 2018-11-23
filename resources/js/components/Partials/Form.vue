@@ -14,7 +14,7 @@
                     :style="{'border-bottom-color': params.colors.primary}"
                     name="message"
                     id="message"
-                    placeholder="Type your feedback here..."
+                    :placeholder="labels.placeholder"
                     v-model="message"
                     required
                 ></textarea>
@@ -22,12 +22,13 @@
                     :style="{'background-color': params.colors.primary}"
                     :class="{'is-loading': isLoading}"
                     :disabled="isLoading"
-                >Send feedback</button>
+                    v-text="labels.button"
+                ></button>
             </form>
         </div>
         <kustomer-success
             v-if="displaySuccessMessage"
-            :message="params.successMessage"
+            :message="labels.success"
         ></kustomer-success>
     </section>
 </template>
@@ -36,7 +37,7 @@
 import html2canvas from 'html2canvas';
 
 export default {
-    props: ['feedback', 'params'],
+    props: ['feedback', 'params', 'labels'],
 
     data() {
         return {

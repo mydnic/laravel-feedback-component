@@ -40,6 +40,12 @@ class PublishCommand extends Command
             '--force' => $this->option('force'),
         ]);
 
+        $this->comment('Publishing Kustomer Translation Files...');
+        $this->call('vendor:publish', [
+            '--tag' => 'kustomer-locales',
+            '--force' => $this->option('force'),
+        ]);
+
         $this->info('Kustomer scaffolding installed successfully.');
     }
 }

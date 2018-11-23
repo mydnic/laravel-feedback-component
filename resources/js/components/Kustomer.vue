@@ -1,8 +1,6 @@
 <template>
     <div class="kustomer-feedback-component" :class="{'is-open': isFeedbackPopupOpen}">
-        <span class="kustomer-tooltip">
-            Give feedback
-        </span>
+        <span class="kustomer-tooltip" v-text="labels.tooltip"></span>
         <div class="kustomer-trigger"
             @click="toggle"
             :style="{'background-color': params.colors.primary}"
@@ -13,13 +11,16 @@
         >
             <img :src="icon" alt="Give feedback">
         </div>
-        <kustomer-popup :params="params"></kustomer-popup>
+        <kustomer-popup
+            :params="params"
+            :labels="labels"
+        ></kustomer-popup>
     </div>
 </template>
 
 <script>
 export default {
-    props: ['params'],
+    props: ['params', 'labels'],
 
     data() {
         return {

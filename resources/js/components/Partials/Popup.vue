@@ -3,7 +3,7 @@
         <kustomer-header>
             <img slot="logo" :src="params.logo">
             <h1 slot="title"
-                v-text="params.title"
+                v-text="labels.title"
                 :style="{'color': params.colors.primary}"
             ></h1>
         </kustomer-header>
@@ -15,6 +15,7 @@
             <kustomer-feedback-form
                 :feedback="selectedFeedback"
                 :params="params"
+                :labels="labels"
                 @unselected="selectedFeedback = undefined"
             ></kustomer-feedback-form>
         </div>
@@ -23,7 +24,7 @@
 
 <script>
 export default {
-    props: ['params'],
+    props: ['params', 'labels'],
 
     data() {
         return {

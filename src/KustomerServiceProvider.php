@@ -20,6 +20,7 @@ class KustomerServiceProvider extends ServiceProvider
 
         $this->registerRoutes();
         $this->registerMigrations();
+        $this->registerTranslations();
     }
 
     /**
@@ -44,6 +45,10 @@ class KustomerServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../resources/sass' => resource_path('sass'),
         ], 'kustomer-sass-component');
+
+        $this->publishes([
+            __DIR__ . '/../resources/lang' => resource_path('lang/vendor/kustomer'),
+        ], 'kustomer-locales');
     }
 
     /**
@@ -69,7 +74,17 @@ class KustomerServiceProvider extends ServiceProvider
     }
 
     /**
-     * Get the Nova route group configuration array.
+     * Register the package translations.
+     *
+     * @return void
+     */
+    protected function registerTranslations()
+    {
+        $this->loadTranslationsFrom(__DIR__ . '../lang', 'kustomer');
+    }
+
+    /**
+     * Get the Kustomer route group configuration array.
      *
      * @return array
      */
