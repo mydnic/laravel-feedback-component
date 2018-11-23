@@ -12,6 +12,7 @@
 - [Demo](#demo)
 - [Installation & Configuration](#installation--configuration)
 	- [Configuration](#configuration)
+    - [Translations](#translations)
     - [Display the component](#display-the-component)
     - [Updating Kustomer](#updating-kustomer)
     - [Include Kustomer assets with your own assets](#include-kustomer-assets-with-your-own-assets)
@@ -63,6 +64,12 @@ This will create a new **feedbacks** table.
 You can update the configuration of the component as you wish by editing `config/kustomer.php`.
 
 I encourrage you to carefully read this config file.
+
+### Translations
+
+All the texts that you can see in the components are translatable. After publishing the assets, you will find the texts in *resources/lang/vendor/en/kustomer.php*
+
+The feedbacks labels are stored in this file as well, and the `feedbacks` array must match the one from you config file.
 
 ### Display the component
 

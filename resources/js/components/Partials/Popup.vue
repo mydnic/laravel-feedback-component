@@ -10,6 +10,7 @@
         <div class="kustomer-container">
             <kustomer-feedbacks-list
                 :feedbacks="params.feedbacks"
+                :labels="labels"
                 @selected="setSelectedFeedback"
             ></kustomer-feedbacks-list>
             <kustomer-feedback-form

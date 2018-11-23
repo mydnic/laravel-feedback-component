@@ -6,20 +6,23 @@
             @click="setFeedbackType(feedback, type)"
         >
             <img :src="feedback.icon" :alt="feedback.title">
-            <p v-text="feedback.title"></p>
+            <p v-text="label(type)"></p>
         </div>
     </section>
 </template>
 
 <script>
 export default {
-    props: ['feedbacks'],
+    props: ['feedbacks', 'labels'],
 
     methods: {
         setFeedbackType(feedback, type) {
             feedback.type = type;
             this.$emit('selected', feedback);
+        },
+        label(type) {
+            return eval('this.labels.feedbacks.' + type + '.title');
         }
-    }
+    },
 }
 </script>

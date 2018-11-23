@@ -57,4 +57,31 @@ return [
     */
 
     'button' => 'Send feedback',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Feedback Texts
+    |--------------------------------------------------------------------------
+    |
+    | Must match the feedbacks array from the config file
+    |
+    */
+    'feedbacks' => [
+        'like' => [
+            'title' => 'I like something',
+            'label' => 'What did you like ?',
+        ],
+        'dislike' => [
+            'title' => 'I don\'t like something',
+            'label' => 'What did you dislike ?',
+        ],
+        'suggestion' => [
+            'title' => 'I have a suggestion',
+            'label' => 'What is your suggestion ?',
+        ],
+        // 'bug' => [
+        //     'title' => 'I found a bug',
+        //     'label' => 'Please explain what happened',
+        // ],
+    ],
 ];

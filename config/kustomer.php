@@ -68,28 +68,23 @@ return [
     | and will be save into your database under the "type" column.
     | This allows you to filter through feedback types.
     |
+    | Only Icons of the feedbacks are defined here. For the texts themselves,
+    | you need to update the translation file in *lang/vendor/en/kustomer.php*
+    |
      */
 
     'feedbacks' => [
         'like' => [
-            'title' => 'I like something',
             'icon' => '/vendor/kustomer/assets/like.svg',
-            'label' => 'What did you like ?',
         ],
         'dislike' => [
-            'title' => 'I don\'t like something',
             'icon' => '/vendor/kustomer/assets/dislike.svg',
-            'label' => 'What did you dislike ?',
         ],
         'suggestion' => [
-            'title' => 'I have a suggestion',
             'icon' => '/vendor/kustomer/assets/idea.svg',
-            'label' => 'What is your suggestion ?',
         ],
         // 'bug' => [
-        //     'title' => 'I found a bug',
         //     'icon' => '/vendor/kustomer/assets/bug.svg',
-        //     'label' => 'Please explain what happened',
         // ],
     ],
 

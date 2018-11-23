@@ -7,7 +7,7 @@
         </div>
 
         <div v-if="feedback && !displaySuccessMessage">
-            <h2 v-text="feedback.label"></h2>
+            <h2 v-text="label()"></h2>
 
             <form @submit.prevent="submit">
                 <textarea
@@ -49,6 +49,9 @@ export default {
     },
 
     methods: {
+        label(type) {
+            return eval('this.labels.feedbacks.' + this.feedback.type + '.label');
+        },
         submit() {
             this.isLoading = true;
             if (this.params.screenshot) {
