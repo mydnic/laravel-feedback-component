@@ -84,7 +84,10 @@ Include these on the pages you want the components to appear :
 </head>
 <body>
     <div id="kustomer">
-        <kustomer :params="{{ json_encode(config('kustomer')) }}"></kustomer>
+        <kustomer
+            :params="{{ json_encode(config('kustomer')) }}"
+            :labels="{{ json_encode(trans('kustomer::kustomer')) }}"
+        ></kustomer>
     </div>
 </body>
 ```
