@@ -114,6 +114,8 @@ $trigger-offset: 30px;
                     padding: 20px 40px;
                     cursor: pointer;
                     transition: background-color .3s ease-out;
+                    align-items: center;
+                    display: flex;
                     img {
                         width: 25px;
                         max-height: 25px;
@@ -124,7 +126,6 @@ $trigger-offset: 30px;
                         font-size: 16px;
                         padding-left: 15px;
                         font-weight: bold;
-                        display: inline-block;
                         margin: 0;
                         padding: 0;
                     }
