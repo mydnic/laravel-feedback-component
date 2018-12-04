@@ -94,7 +94,7 @@ class KustomerServiceProvider extends ServiceProvider
             'namespace' => 'Mydnic\Kustomer\Http\Controllers',
             'as' => 'kustomer.api.',
             'prefix' => 'kustomer-api',
-            'middleware' => 'api',
+            'middleware' => 'web',
         ];
     }
 
