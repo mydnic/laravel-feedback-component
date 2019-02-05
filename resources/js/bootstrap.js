@@ -1,6 +1,7 @@
 window._ = require('lodash');
 window.Vue = require('vue');
 
+// Setup AXIOS
 window.axios = require('axios');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -12,3 +13,8 @@ if (token) {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
+// Inject CSS
+var link = document.createElement('link');
+link.rel = 'stylesheet';
+link.href = '/vendor/kustomer/css/kustomer.css';
+document.head.appendChild(link);

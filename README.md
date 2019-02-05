@@ -77,18 +77,12 @@ In your `public/` directory you'll find compiled css and js files that needs to 
 
 Include these on the pages you want the components to appear :
 
-```html
+```blade
 <head>
     <script src="{{ asset('vendor/kustomer/js/kustomer.js') }}" defer></script>
-    <link href="{{ asset('vendor/kustomer/css/kustomer.css') }}" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div id="kustomer">
-        <kustomer
-            :params="{{ json_encode(config('kustomer')) }}"
-            :labels="{{ json_encode(trans('kustomer::kustomer')) }}"
-        ></kustomer>
-    </div>
+    @include('kustomer::kustomer')
 </body>
 ```
 

@@ -46,6 +46,12 @@ class PublishCommand extends Command
             '--force' => $this->option('force'),
         ]);
 
+        $this->comment('Publishing Kustomer View Files...');
+        $this->call('vendor:publish', [
+            '--tag' => 'kustomer-views',
+            '--force' => $this->option('force'),
+        ]);
+
         $this->info('Kustomer scaffolding installed successfully.');
     }
 }

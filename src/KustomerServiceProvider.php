@@ -21,6 +21,7 @@ class KustomerServiceProvider extends ServiceProvider
         $this->registerRoutes();
         $this->registerMigrations();
         $this->registerTranslations();
+        $this->registerViews();
     }
 
     /**
@@ -49,6 +50,11 @@ class KustomerServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../resources/lang' => resource_path('lang/vendor/kustomer'),
         ], 'kustomer-locales');
+
+        $this->publishes(
+            [__DIR__ . '/../resources/views' => resource_path('views/vendor/kustomer')],
+            'kustomer-views'
+        );
     }
 
     /**
@@ -80,7 +86,17 @@ class KustomerServiceProvider extends ServiceProvider
      */
     protected function registerTranslations()
     {
-        $this->loadTranslationsFrom(__DIR__ . '../lang', 'kustomer');
+        $this->loadTranslationsFrom(__DIR__ . '../resources/lang', 'kustomer');
+    }
+
+    /**
+     * Register the package views.
+     *
+     * @return void
+     */
+    public function registerViews()
+    {
+        $this->loadViewsFrom(__DIR__ . '../resources/views', 'kustomer');
     }
 
     /**
