@@ -86,7 +86,7 @@ Include these on the pages you want the components to appear :
 </body>
 ```
 
-> **Attention** If you run a VueJS application, you must add the `#kustomer` container outside your `#app` container. This is because kustomer runs on its own vue instance by default. If you want to change that, see [Include Kustomer assets with your own assets](#include-assets)
+> **Attention** If you run a VueJS application, you must add the `@include` blade directive outside your `#app` container. This is because kustomer runs on its own vue instance by default. If you want to change that, see [Include Kustomer assets with your own assets](#include-assets)
 
 ### Updating Kustomer
 

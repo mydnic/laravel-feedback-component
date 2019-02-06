@@ -101,4 +101,22 @@ return [
      */
 
     'screenshot' => false,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Enable Chatting Feature
+    |--------------------------------------------------------------------------
+    |
+    | Any good customer service like Kustomer allows visitors to chat live with
+    | the website management team. With Kustomer, you can do too! If this is
+    | a Kustomer Feedback package at first, you can now let your visitors
+    | chat with through a live chat interface. To enable this, simply
+    | set this property to true.
+    |
+     */
+
+    'chat' => [
+        'enabled' => true,
+        'icon' => '/vendor/kustomer/assets/chat.svg',
+    ],
 ];

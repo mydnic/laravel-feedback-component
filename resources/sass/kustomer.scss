@@ -4,6 +4,7 @@ $tooltip-background-color: #5D6575;
 $shadow-color: rgba(5,43,81,.1);
 
 $popup-background-color: #fff;
+$chat-background-color: #f1f1f1;
 
 $popup-header-border-color: #e0e0e0;
 
@@ -18,6 +19,26 @@ $trigger-offset: 30px;
     width: $trigger-size;
     height: $trigger-size;
     padding: 10px;
+    .is-loading {
+        box-shadow: none;
+        cursor: not-allowed;
+        opacity: .5;
+        color: transparent !important;
+        pointer-events: none;
+        &::after {
+            border-color: transparent transparent #fff #fff !important;
+            left: calc(50% - (1em / 2));
+            top: calc(50% - (1em / 2));
+            position: absolute !important;
+            animation: loading .5s infinite linear;
+            border: 2px solid #dbdbdb;
+            border-radius: 290486px;
+            content: "";
+            display: block;
+            height: 1em;
+            width: 1em;
+        }
+    }
     &:not(.is-open):hover {
         .kustomer-tooltip {
             opacity: 1;
@@ -134,6 +155,64 @@ $trigger-offset: 30px;
                     }
                 }
             }
+            .kustomer-back {
+                height: 45px;
+                width: 100%;
+                padding: 10px;
+                cursor: pointer;
+                transition: background-color .3s ease-out;
+                &:hover {
+                    background-color: hsl(210, 9%, 96%);
+                }
+                img {
+                    max-height: 100%;
+                    width: 25px;
+                }
+            }
+            section.kustomer-chat {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                background-color: $popup-background-color;
+                display: flex;
+                flex-direction: column;
+                .kustomer-chat-messages {
+                    flex-grow: 1;
+                    background-color: $chat-background-color;
+                }
+                form {
+                    position: relative;
+                    height: 50px;
+                    input {
+                        position: absolute;
+                        appearance: none;
+                        padding: 10px;
+                        top: 0;
+                        right: 0;
+                        left: 0;
+                        bottom: 0px;
+                        width: 100%;
+                        border: none;
+                        border-top: 1px solid rgba(grey, .4);
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                    .is-loading {
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        top: 0;
+                        padding: 10px;
+                        width: 50px;
+                        &::after {
+                            border-color: transparent transparent #333131 #333131 !important;
+                        }
+                    }
+                }
+            }
             section.kustomer-form {
                 position: absolute;
                 top: 0;
@@ -146,20 +225,7 @@ $trigger-offset: 30px;
                 &.is-open {
                     transform: translateX(0);
                 }
-                .kustomer-back {
-                    height: 45px;
-                    width: 100%;
-                    padding: 10px;
-                    cursor: pointer;
-                    transition: background-color .3s ease-out;
-                    &:hover {
-                        background-color: hsl(210, 9%, 96%);
-                    }
-                    img {
-                        max-height: 100%;
-                        width: 25px;
-                    }
-                }
+
                 h2 {
                     width: 270px;
                     margin: 0 auto;
@@ -205,26 +271,6 @@ $trigger-offset: 30px;
                         margin: 0;
                         border: 0 solid #fff;
                         position: relative;
-                        &.is-loading {
-                            box-shadow: none;
-                            cursor: not-allowed;
-                            opacity: .5;
-                            color: transparent !important;
-                            pointer-events: none;
-                            &::after {
-                                border-color: transparent transparent #fff #fff !important;
-                                left: calc(50% - (1em / 2));
-                                top: calc(50% - (1em / 2));
-                                position: absolute !important;
-                                animation: loading .5s infinite linear;
-                                border: 2px solid #dbdbdb;
-                                border-radius: 290486px;
-                                content: "";
-                                display: block;
-                                height: 1em;
-                                width: 1em;
-                            }
-                        }
                     }
                 }
             }

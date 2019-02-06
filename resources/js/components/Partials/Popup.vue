@@ -11,7 +11,9 @@
             <kustomer-feedbacks-list
                 :feedbacks="params.feedbacks"
                 :labels="labels"
+                :params="params"
                 @selected="setSelectedFeedback"
+                @open-chat="isChatOpen = true"
             ></kustomer-feedbacks-list>
             <kustomer-feedback-form
                 :feedback="selectedFeedback"
@@ -19,6 +21,12 @@
                 :labels="labels"
                 @unselected="selectedFeedback = undefined"
             ></kustomer-feedback-form>
+            <kustomer-chat
+                v-if="isChatOpen"
+                :labels="labels"
+                :params="params"
+                @unselected="isChatOpen = false"
+            ></kustomer-chat>
         </div>
     </div>
 </template>
@@ -30,6 +38,7 @@ export default {
     data() {
         return {
             selectedFeedback: undefined,
+            isChatOpen: false,
         }
     },
 
@@ -43,6 +52,7 @@ export default {
         'kustomer-header': require('./Header.vue'),
         'kustomer-feedbacks-list': require('./FeedbacksList.vue'),
         'kustomer-feedback-form': require('./Form.vue'),
+        'kustomer-chat': require('./Chat/Chat.vue'),
     }
 }
 </script>

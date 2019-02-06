@@ -84,4 +84,9 @@ return [
         //     'label' => 'Please explain what happened',
         // ],
     ],
+
+    'chat' => [
+        'title' => 'I want to chat',
+        'placeholder' => 'Compose your message...',
+    ]
 ];
