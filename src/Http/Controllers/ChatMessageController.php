@@ -12,6 +12,12 @@ class ChatMessageController extends Controller
 {
     public function store(Request $request)
     {
-        // code...
+        $message = new ChatMessage;
+        $message->message = $request->message;
+        $message->save();
+
+        return response()->json([
+            'created' => true
+        ], 201);
     }
 }
