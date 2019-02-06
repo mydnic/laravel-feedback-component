@@ -54,6 +54,7 @@ class FeedbackController extends Controller
             'agent' => $request->server('HTTP_USER_AGENT'),
             'viewport' => $request->viewport,
             'screenshot' => $this->saveScreenshot($request->screenshot),
+            'user_id' => auth()->check() ? auth()->id() : null,
         ];
     }
 
