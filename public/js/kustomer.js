@@ -1734,7 +1734,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     data: function data() {
         return {
-            message: null,
+            message: undefined,
             isLoading: false
         };
     },
@@ -1742,7 +1742,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         submit: function submit() {
+            var _this = this;
+
             this.isLoading = true;
+
+            axios.post('/kustomer-api/message', {
+                message: this.message
+            }).then(function (response) {
+                _this.isLoading = false;
+                _this.message = undefined;
+            }).catch(function (error) {
+                _this.isLoading = false;
+            });
         },
         back: function back() {
             this.$emit('unselected');

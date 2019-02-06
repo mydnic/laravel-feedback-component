@@ -29,7 +29,7 @@ export default {
 
     data() {
         return {
-            message: null,
+            message: undefined,
             isLoading: false,
         }
     },
@@ -37,6 +37,17 @@ export default {
     methods: {
         submit() {
             this.isLoading = true;
+
+            axios.post('/kustomer-api/message', {
+                message: this.message
+            })
+            .then(response => {
+                this.isLoading = false;
+                this.message = undefined;
+            })
+            .catch(error => {
+                this.isLoading = false;
+            })
         },
         back() {
             this.$emit('unselected');

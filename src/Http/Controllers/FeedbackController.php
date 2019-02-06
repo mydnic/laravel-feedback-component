@@ -4,18 +4,16 @@ namespace Mydnic\Kustomer\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Mydnic\Kustomer\Feedback;
-use Illuminate\Validation\Rule;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Storage;
 use Mydnic\Kustomer\Events\NewFeedback;
+use Mydnic\Kustomer\Http\Requests\StoreFeedbackRequest;
 
 class FeedbackController extends Controller
 {
-    public function store(Request $request)
+    public function store(StoreFeedbackRequest $request)
     {
-        $data = $this->validates($request);
-
-        $feedback = $this->storeFeedback($data, $request);
+        $feedback = $this->storeFeedback($request);
 
         $this->dispatchEvent($feedback);
 
@@ -24,22 +22,11 @@ class FeedbackController extends Controller
         ], 201);
     }
 
-    private function validates(Request $request)
-    {
-        return $request->validate([
-            'type' => [
-                'required', Rule::in(array_keys(config('kustomer.feedbacks'))),
-            ],
-            'message' => 'required',
-            'viewport' => 'array',
-        ]);
-    }
-
-    private function storeFeedback($data, Request $request)
+    private function storeFeedback(Request $request)
     {
         $feedback = new Feedback;
-        $feedback->type = $data['type'];
-        $feedback->message = $data['message'];
+        $feedback->type = $request->type;
+        $feedback->message = $request->message;
         $feedback->user_info = $this->gatherUserInfo($request);
         $feedback->save();
 
