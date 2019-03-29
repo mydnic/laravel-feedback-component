@@ -16,6 +16,8 @@ class ChatMessageController extends Controller
         $message->message = $request->message;
         $message->save();
 
+        broadcast(new MessageSent($message))->toOthers();
+
         return response()->json([
             'created' => true
         ], 201);
