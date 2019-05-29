@@ -14,7 +14,7 @@
         "cross-env": "^5.1",
         "laravel-mix": "^4.0",
         "lodash": "^4.17.4",
-        "vue": "^2.5.7"
+        "vue": "^2.6.10"
     },
     "dependencies": {
         "html2canvas": "^1.0.0-rc.2"
