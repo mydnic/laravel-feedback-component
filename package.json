@@ -17,6 +17,6 @@
         "vue": "^2.6.10"
     },
     "dependencies": {
-        "html2canvas": "^1.0.0-rc.2"
+        "html2canvas": "^1.0.0-rc.3"
     }
 }
