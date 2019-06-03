@@ -86,7 +86,7 @@ class KustomerServiceProvider extends ServiceProvider
      */
     protected function registerTranslations()
     {
-        $this->loadTranslationsFrom(__DIR__ . '../resources/lang', 'kustomer');
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'kustomer');
     }
 
     /**
@@ -96,7 +96,7 @@ class KustomerServiceProvider extends ServiceProvider
      */
     public function registerViews()
     {
-        $this->loadViewsFrom(__DIR__ . '../resources/views', 'kustomer');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'kustomer');
     }
 
     /**
