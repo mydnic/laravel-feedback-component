@@ -12,7 +12,7 @@
     "devDependencies": {
         "axios": "^0.19",
         "cross-env": "^6.0",
-        "laravel-mix": "^4.1",
+        "laravel-mix": "^5.0",
         "lodash": "^4.17.15",
         "vue": "^2.6.10"
     },
