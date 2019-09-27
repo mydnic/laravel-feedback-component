@@ -2,6 +2,7 @@
 
 namespace Mydnic\Kustomer\Http\Controllers;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Mydnic\Kustomer\Feedback;
 use Illuminate\Validation\Rule;
@@ -69,7 +70,7 @@ class FeedbackController extends Controller
             $image = $base64Screenshot;
             $image = str_replace('data:image/png;base64,', '', $image);
             $image = str_replace(' ', '+', $image);
-            $imageName = microtime(true) . str_random(4) . '.' . 'png';
+            $imageName = microtime(true) . Str::random(4) . '.' . 'png';
             if (Storage::put('screenshots/' . $imageName, base64_decode($image))) {
                 return 'screenshots/' . $imageName;
             }
