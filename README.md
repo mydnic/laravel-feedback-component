@@ -2,8 +2,6 @@
 
 Note that nothing in the code changed (still same namespace). Only the package name has changed. Namespace might changed later in a major release.
 
-You **must** change the package name in your composer.json file. Sorry about that.
-
 # Customizable Feedback Component for Laravel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/mydnic/laravel-kustomer.svg)](https://packagist.org/packages/mydnic/laravel-kustomer)
