@@ -1,5 +1,5 @@
 {
-    "name": "mydnic/laravel-kustomer",
+    "name": "mydnic/laravel-feedback-component",
     "description": "Open Source Feedback Interface for Laravel",
     "keywords": [
         "laravel",
@@ -7,7 +7,7 @@
         "feedback"
     ],
     "license": "MIT",
-    "homepage": "https://github.com/mydnic/laravel-kustomer",
+    "homepage": "https://github.com/mydnic/laravel-feedback-component",
     "authors": [
         {
             "name": "Clément Rigo",
