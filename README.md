@@ -1,4 +1,8 @@
-<p align="center"><img src="http://files.mydnic.be/laravel-kustomer/logo-full.png" alt="Laravel Kustomer"></p>
+**Due to a [stupid copyright infringement](https://twitter.com/mydnic/status/1219908154919702528) I had to rename this package.**
+
+Note that nothing in the code changed (still same namespace). Only the package name has changed. Namespace might changed later in a major release.
+
+<p align="center"><img src="http://files.mydnic.be/laravel-kustomer/logo-full.png" alt="Laravel Feedback Component"></p>
 
 # Customizable Feedback Component for Laravel
 
@@ -14,42 +18,42 @@
 	- [Configuration](#configuration)
     - [Translations](#translations)
     - [Display the component](#display-the-component)
-    - [Updating Kustomer](#updating-kustomer)
-    - [Include Kustomer assets with your own assets](#include-kustomer-assets-with-your-own-assets)
+    - [Updating](#updating)
+    - [Include assets with your own assets](#include-kustomer-assets-with-your-own-assets)
         - [Pre requisite](#pre-requisite)
         - [Install](#install)
 - [Retrieve Feedbacks](#retrieve-feedbacks)
-    - [Nova Kustomer](#use-with-laravel-nova)
+    - [Nova Tool](#use-with-laravel-nova)
 - [Event, Job, Notification, etc](#event-job-notification-etc)
 - [License](#license)
 
 ## Introduction
 
-Laravel Kustomer allows you to easily implement a Customer Feedback component on your website. It is build with VueJS but can be implemented in any kind of Laravel Project. You just need to drop a few lines in your layout.
+Laravel Feedback Component allows you to easily implement a Customer Feedback component on your website. It is build with VueJS but can be implemented in any kind of Laravel Project. You just need to drop a few lines in your layout.
 
 You probably know a lot of website that use intercom's chatting system, or crisp, chat.io and many more customer chat allowing you to get feedbacks from your website visitors.
 
-Laravel Kustomer is an open-source and customizable alternative that adopts the same layout. Once installed, you will see the component on your website.
+Laravel Feedback Component is an open-source and customizable alternative that adopts the same layout. Once installed, you will see the component on your website.
 
 We also have a [Nova Tool](https://github.com/mydnic/nova-kustomer) for it!
 
 ### Chatting System
 
-I'll work on implementing a chatting system in Laravel Kustomer, that will probably work with Laravel Nova. This is planned for V2. For now, you can only gather feedbacks from your visitors.
+I'll work on implementing a chatting system in Laravel Feedback Component, that will probably work with Laravel Nova. This is planned for V2. For now, you can only gather feedbacks from your visitors.
 
 ## Demo
 
-<img src="http://files.mydnic.be/laravel-kustomer/demo.gif" alt="Laravel Kustomer">
+<img src="http://files.mydnic.be/laravel-kustomer/demo.gif" alt="Laravel Feedback Component">
 
 ## Installation & Configuration
 
-You may use Composer to Install Laravel Kustomer:
+You may use Composer to Install Laravel Feedback Component:
 
 ```bash
 composer require mydnic/laravel-kustomer
 ```
 
-After installing Laravel Kustomer, publish its assets using the `kustomer:publish` Artisan command. After installing Kustomer, you should also run the migrate command:
+After installing Laravel Feedback Component, publish its assets using the `kustomer:publish` Artisan command. After installing the package, you should also run the migrate command:
 
 ```bash
 php artisan kustomer:publish
@@ -86,11 +90,11 @@ Include these on the pages you want the components to appear :
 </body>
 ```
 
-> **Attention** If you run a VueJS application, you must add the `#kustomer` container outside your `#app` container. This is because kustomer runs on its own vue instance by default. If you want to change that, see [Include Kustomer assets with your own assets](#include-assets)
+> **Attention** If you run a VueJS application, you must add the `#kustomer` container outside your `#app` container. This is because kustomer runs on its own vue instance by default. If you want to change that, see [Include assets with your own assets](#include-assets)
 
-### Updating Kustomer
+### Updating
 
-When updating Kustomer, you should re-publish the assets:
+When updating this package, you should re-publish the assets:
 
 ```bash
 php artisan vendor:publish --tag=kustomer-assets --force
@@ -99,9 +103,9 @@ php artisan vendor:publish --tag=kustomer-assets --force
 This will re-publish the compiled JS and CSS files, but also the svg files located in `public/vendor/kustomer/assets`. If you want to use your own images, please update the configuration file.
 
 <a name="include-assets"></a>
-### Include Kustomer assets with your own assets
+### Include assets with your own assets
 
-Optionnally, you can import the `.vue` and `.sass` files into your own `resources/js` and `resources/sass` folders, allowing you to heavily customize the Kustomer components and layout.
+Optionnally, you can import the `.vue` and `.sass` files into your own `resources/js` and `resources/sass` folders, allowing you to heavily customize the Feedback Component components and layout.
 
 This will also allow you to end up with only one compiled `.js` and `.css` in your app.
 
@@ -183,7 +187,7 @@ When a new feedback is correctly stored, we will dispatch a Laravel Event.
 
 You can listen to this event and trigger any kind of listeners. It's up to you to decide what happens next! You can send an email to the administrator, log some data, or whatever you can think about.
 
-In your `EventServiceProvider` you can update the `$listen` property to add the Kustomer Event.
+In your `EventServiceProvider` you can update the `$listen` property to add the Event.
 
 ```php
 protected $listen = [
