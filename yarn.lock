@@ -3708,9 +3708,9 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   integrity sha512-s5kLOcnH0XqDO+FvuaLX8DDjZ18CGFk7VygH40QoKPUQhW4e2rvM0rwUq0t8IQDOwYSeLK01U90OjzBTme2QqA==
 
 laravel-mix@^5.0:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/laravel-mix/-/laravel-mix-5.0.1.tgz#cccd59e2662b0db225c606a4e12f89d91ee91b46"
-  integrity sha512-Ccs+VcxJj+FJ6hiMVwboqP1LLLCUA4fa8BrgqFBwK9XJuf/4r+5LEPYurvRGhizjUEybCb4ty/2u+mfEY4YvtA==
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/laravel-mix/-/laravel-mix-5.0.4.tgz#606a28781b936d66cf96a0d631909cea22ebf0a8"
+  integrity sha512-/fkcMdlxhGDBcH+kFDqKONlAfhJinMAWd+fjQ+VLii4UzIeXUF5Q8FbS4+ZrZs9JO3Y1E4KoNq3hMw0t/soahA==
   dependencies:
     "@babel/core" "^7.2.0"
     "@babel/plugin-proposal-object-rest-spread" "^7.2.0"
