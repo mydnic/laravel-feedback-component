@@ -1,5 +1,6 @@
 {
-    "private": true,
+    "private": false,
+    "license": "MIT",
     "scripts": {
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -14,7 +15,11 @@
         "cross-env": "^7.0",
         "laravel-mix": "^5.0",
         "lodash": "^4.17.15",
-        "vue": "^2.6.11"
+        "resolve-url-loader": "^3.1.0",
+        "sass": "^1.26.3",
+        "sass-loader": "^8.0.2",
+        "vue": "^2.6.11",
+        "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
         "html2canvas": "^1.0.0-rc.5"
