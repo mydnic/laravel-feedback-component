@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8bce77313cfa72917a33fa0e240e1cef",
+    "content-hash": "5dd08bce0d2ccf95d0bdb71eb6920844",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -3678,16 +3678,16 @@
         },
         {
             "name": "orchestra/testbench",
-            "version": "v3.7.7",
+            "version": "v3.7.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/testbench.git",
-                "reference": "0715465a6f921e1da61f28cb5b310cbbaa3c92bf"
+                "reference": "43588b01b316dc6e5cabd726e1cd9ced7babf37a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench/zipball/0715465a6f921e1da61f28cb5b310cbbaa3c92bf",
-                "reference": "0715465a6f921e1da61f28cb5b310cbbaa3c92bf",
+                "url": "https://api.github.com/repos/orchestral/testbench/zipball/43588b01b316dc6e5cabd726e1cd9ced7babf37a",
+                "reference": "43588b01b316dc6e5cabd726e1cd9ced7babf37a",
                 "shasum": ""
             },
             "require": {
@@ -3724,7 +3724,7 @@
                 "orchestral",
                 "testing"
             ],
-            "time": "2019-03-16T07:03:42+00:00"
+            "time": "2020-04-27T09:39:51+00:00"
         },
         {
             "name": "orchestra/testbench-core",
