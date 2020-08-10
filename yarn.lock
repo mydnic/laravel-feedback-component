@@ -3290,10 +3290,10 @@ html-minifier@^3.5.8:
     relateurl "0.2.x"
     uglify-js "3.4.x"
 
-html2canvas@^1.0.0-rc.5:
-  version "1.0.0-rc.5"
-  resolved "https://registry.yarnpkg.com/html2canvas/-/html2canvas-1.0.0-rc.5.tgz#4ee3cac9f6e20a0fa0c2f35a6f99c960ae7ec4c1"
-  integrity sha512-DtNqPxJNXPoTajs+lVQzGS1SULRI4GQaROeU5R41xH8acffHukxRh/NBVcTBsfCkJSkLq91rih5TpbEwUP9yWA==
+html2canvas@^1.0.0-rc.6:
+  version "1.0.0-rc.6"
+  resolved "https://registry.yarnpkg.com/html2canvas/-/html2canvas-1.0.0-rc.6.tgz#7f947749422a45b243bacaa8560a5a07724507ab"
+  integrity sha512-cb5O6O9VpbotSt46xwLoaIxzHNeQj2DoDX5BXTGAYM+beZ7zFTwdng62wDhm3gPIwzURHaeWrwS9mEBZD0oBbg==
   dependencies:
     css-line-break "1.1.1"
 
