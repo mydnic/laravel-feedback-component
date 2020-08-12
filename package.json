@@ -22,6 +22,6 @@
         "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
-        "html2canvas": "^1.0.0-rc.6"
+        "html2canvas": "^1.0.0-rc.7"
     }
 }
