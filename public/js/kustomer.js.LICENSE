@@ -1,6 +1,6 @@
 /*!
- * Vue.js v2.6.11
- * (c) 2014-2019 Evan You
+ * Vue.js v2.6.12
+ * (c) 2014-2020 Evan You
  * Released under the MIT License.
  */
 
@@ -14,8 +14,8 @@
  */
 
 /*!
- * html2canvas 1.0.0-rc.5 <https://html2canvas.hertzen.com>
- * Copyright (c) 2019 Niklas von Hertzen <https://hertzen.com>
+ * html2canvas 1.0.0-rc.7 <https://html2canvas.hertzen.com>
+ * Copyright (c) 2020 Niklas von Hertzen <https://hertzen.com>
  * Released under MIT License
  */
 
