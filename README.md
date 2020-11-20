@@ -41,7 +41,7 @@ I'll work on implementing a chatting system in Laravel Feedback Component, that 
 
 ## Demo
 
-<img src="http://files.mydnic.be/laravel-kustomer/demo.gif" alt="Laravel Feedback Component">
+<img src="https://github.com/mydnic/laravel-feedback-component/blob/master/demo.gif?raw=true" alt="Laravel Feedback Component">
 
 ## Installation & Configuration
 
