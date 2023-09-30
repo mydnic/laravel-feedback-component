@@ -25,7 +25,7 @@ class FeedbackController extends Controller
         ], 201);
     }
 
-    private function validates(Request $request)
+    protected function validates(Request $request)
     {
         return $request->validate([
             'type' => [
@@ -36,7 +36,7 @@ class FeedbackController extends Controller
         ]);
     }
 
-    private function storeFeedback($data, Request $request)
+    protected function storeFeedback($data, Request $request)
     {
         $feedback = new Feedback;
         $feedback->type = $data['type'];
@@ -47,7 +47,7 @@ class FeedbackController extends Controller
         return $feedback;
     }
 
-    private function gatherUserInfo(Request $request)
+    protected function gatherUserInfo(Request $request)
     {
         return [
             'url' => $request->server('HTTP_REFERER'),
@@ -59,12 +59,12 @@ class FeedbackController extends Controller
         ];
     }
 
-    private function dispatchEvent(Feedback $feedback)
+    protected function dispatchEvent(Feedback $feedback)
     {
         event(new NewFeedback($feedback));
     }
 
-    private function saveScreenshot($base64Screenshot = null)
+    protected function saveScreenshot($base64Screenshot = null)
     {
         if ($base64Screenshot and config('kustomer.screenshot')) {
             $image = $base64Screenshot;
