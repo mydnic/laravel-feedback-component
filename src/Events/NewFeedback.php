@@ -9,7 +9,6 @@ use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
-use Mydnic\Kustomer\Feedback;
 
 class NewFeedback implements ShouldBroadcast
 {
@@ -22,7 +21,7 @@ class NewFeedback implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct(Feedback $feedback)
+    public function __construct($feedback)
     {
         $this->feedback = $feedback;
     }

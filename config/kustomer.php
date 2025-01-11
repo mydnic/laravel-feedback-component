@@ -101,4 +101,43 @@ return [
      */
 
     'screenshot' => false,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Screenshot Storage Disk
+    |--------------------------------------------------------------------------
+    |
+    | Define which storage disk should be used to store the feedback screenshots.
+    | This should be one of the disk names from your config/filesystems.php.
+    | If not specified, the default disk will be used.
+    |
+     */
+
+    'screenshot_disk' => null,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Feedback Model
+    |--------------------------------------------------------------------------
+    |
+    | This is the model class that will be used for feedback records. You can
+    | override this to use your own model class if you need to extend or
+    | modify the base feedback functionality.
+    |
+    */
+
+    'model' => \Mydnic\Kustomer\Models\Feedback::class,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Feedback Controller
+    |--------------------------------------------------------------------------
+    |
+    | This is the controller class that will handle feedback submissions.
+    | You can override this to use your own controller if you need to
+    | modify the base feedback handling functionality.
+    |
+    */
+
+    'controller' => \Mydnic\Kustomer\Http\Controllers\FeedbackController::class,
 ];
