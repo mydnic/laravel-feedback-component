@@ -4,7 +4,6 @@ namespace Mydnic\Kustomer\Http\Controllers;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Mydnic\Kustomer\Feedback;
 use Illuminate\Validation\Rule;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -38,7 +37,9 @@ class FeedbackController extends Controller
 
     protected function storeFeedback($data, Request $request)
     {
-        $feedback = new Feedback;
+        $feedbackModel = config('kustomer.model');
+        $feedback = new $feedbackModel;
+        
         $feedback->type = $data['type'];
         $feedback->message = $data['message'];
         $feedback->user_info = $this->gatherUserInfo($request);
@@ -59,7 +60,7 @@ class FeedbackController extends Controller
         ];
     }
 
-    protected function dispatchEvent(Feedback $feedback)
+    protected function dispatchEvent($feedback)
     {
         event(new NewFeedback($feedback));
     }
@@ -71,7 +72,11 @@ class FeedbackController extends Controller
             $image = str_replace('data:image/png;base64,', '', $image);
             $image = str_replace(' ', '+', $image);
             $imageName = microtime(true) . Str::random(4) . '.' . 'png';
-            if (Storage::put('screenshots/' . $imageName, base64_decode($image))) {
+            
+            $disk = config('kustomer.screenshot_disk');
+            $storage = $disk ? Storage::disk($disk) : Storage::disk();
+
+            if ($storage->put('screenshots/' . $imageName, base64_decode($image))) {
                 return 'screenshots/' . $imageName;
             }
         }

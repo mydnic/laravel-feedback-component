@@ -2,4 +2,5 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::post('feedback', 'FeedbackController@store')->name('feedback.store');
+Route::post('/feedback', [config('kustomer.controller'), 'store'])
+    ->name('feedback.store');
