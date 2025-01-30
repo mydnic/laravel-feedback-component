@@ -1,3 +1,17 @@
+<script setup>
+const props = defineProps(['feedbacks', 'labels'])
+const emit = defineEmits(['selected'])
+
+const setFeedbackType = (feedback, type) => {
+    feedback.type = type
+    emit('selected', feedback)
+}
+
+const label = (type) =>{
+    return props.labels.feedbacks[type].title
+}
+</script>
+
 <template>
     <section class="kustomer-feedbacks">
         <div
@@ -11,19 +25,3 @@
         </div>
     </section>
 </template>
-
-<script>
-export default {
-    props: ['feedbacks', 'labels'],
-
-    methods: {
-        setFeedbackType(feedback, type) {
-            feedback.type = type
-            this.$emit('selected', feedback)
-        },
-        label(type) {
-            return eval('this.labels.feedbacks.' + type + '.title')
-        }
-    }
-}
-</script>
