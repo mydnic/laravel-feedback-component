@@ -1,6 +1,6 @@
 <?php
 
-namespace Mydnic\Kustomer;
+namespace Mydnic\Kustomer\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

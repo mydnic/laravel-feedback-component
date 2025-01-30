@@ -2,7 +2,7 @@
 
 namespace Mydnic\Kustomer\Test;
 
-use Mydnic\Kustomer\Feedback;
+use Mydnic\Kustomer\Models\Feedback;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Orchestra\Testbench\Http\Middleware\VerifyCsrfToken;
