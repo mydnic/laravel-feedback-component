@@ -103,11 +103,11 @@ This will re-publish the compiled JS and CSS files, but also the svg files locat
 <a name="include-assets"></a>
 ### Include assets with your own assets
 
-Optionnally, you can import the `.vue` and `.sass` files into your own `resources/js` and `resources/sass` folders, allowing you to heavily customize the Feedback Component components and layout.
+Optionally, you can import the `.vue` and `.css` files into your own `resources/js` and `resources/css` folders, allowing you to heavily customize the Feedback Component components and layout.
 
 This will also allow you to end up with only one compiled `.js` and `.css` in your app.
 
-However, you should be carefull if you're trying to update the a latest version, because your changes might be lost.
+However, you should be careful if you're trying to update the latest version, because your changes might be lost.
 
 #### Pre requisite
 
@@ -144,7 +144,7 @@ php artisan vendor:publish --tag=kustomer-vue-component
 
 Publish the SASS style file:
 ```bash
-php artisan vendor:publish --tag=kustomer-sass-component
+php artisan vendor:publish --tag=kustomer-css-component
 ```
 
 Then in your vue app:
@@ -155,7 +155,7 @@ Vue.component('kustomer', require('./components/Kustomer/Kustomer.vue'));
 ```
 
 ```scss
-// app.scss
+// app.css
 @import 'kustomer';
 ```
 

@@ -16,6 +16,6 @@ mix
 
     .js('resources/js/kustomer.js', 'public/js')
 
-    .sass('resources/sass/kustomer.scss', 'public/css')
+    .css('resources/css/kustomer.css', 'public/css')
 
     .version()

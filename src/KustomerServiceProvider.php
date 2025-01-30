@@ -44,8 +44,8 @@ class KustomerServiceProvider extends ServiceProvider
         ], 'kustomer-vue-component');
 
         $this->publishes([
-            __DIR__ . '/../resources/sass' => resource_path('sass'),
-        ], 'kustomer-sass-component');
+            __DIR__ . '/../resources/css' => resource_path('css'),
+        ], 'kustomer-css-component');
 
         $this->publishes([
             __DIR__ . '/../resources/lang' => resource_path('lang/vendor/kustomer'),
