@@ -1,3 +1,7 @@
+<script setup>
+
+</script>
+
 <template>
     <div class="kustomer-header">
         <div class="kustomer-logo">
@@ -7,6 +11,4 @@
     </div>
 </template>
 
-<script>
-export default {}
-</script>
+

@@ -1,8 +1,28 @@
+<script setup>
+import {ref} from "vue";
+
+import KustomerHeader from './Header.vue'
+import KustomerFeedbacksList from './FeedbacksList.vue'
+import KustomerFeedbackForm from './Form.vue'
+
+defineProps(['params', 'labels'])
+
+const selectedFeedback = ref(undefined)
+
+const setSelectedFeedback = (feedback) => {
+    selectedFeedback.value = feedback
+}
+</script>
+
 <template>
     <div class="kustomer-popup">
         <kustomer-header>
-            <img slot="logo" :src="params.logo" />
-            <h1 slot="title" v-text="labels.title" :style="{'color': params.colors.primary}"></h1>
+            <template v-slot:logo>
+                <img :src="params.logo" />
+            </template>
+            <template v-slot:title>
+                <h1 v-text="labels.title" :style="{'color': params.colors.primary}"></h1>
+            </template>
         </kustomer-header>
         <div class="kustomer-container">
             <kustomer-feedbacks-list
@@ -19,27 +39,3 @@
         </div>
     </div>
 </template>
-
-<script>
-export default {
-    props: ['params', 'labels'],
-
-    data() {
-        return {
-            selectedFeedback: undefined
-        }
-    },
-
-    methods: {
-        setSelectedFeedback(feedback) {
-            this.selectedFeedback = feedback
-        }
-    },
-
-    components: {
-        'kustomer-header': require('./Header.vue').default,
-        'kustomer-feedbacks-list': require('./FeedbacksList.vue').default,
-        'kustomer-feedback-form': require('./Form.vue').default
-    }
-}
-</script>

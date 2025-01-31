@@ -1,3 +1,7 @@
+<script setup>
+defineProps(['message'])
+</script>
+
 <template>
     <div>
         <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
@@ -8,15 +12,11 @@
     </div>
 </template>
 
-<script>
-export default {
-    props: ['message']
+<style lang="css" scoped>
+:root {
+    --color--green: #7ac142;
+    --curve: cubic-bezier(0.65, 0, 0.45, 1);
 }
-</script>
-
-<style lang="scss" scoped>
-$color--green: #7ac142;
-$curve: cubic-bezier(0.65, 0, 0.45, 1);
 
 p {
     font-weight: bold;
@@ -28,9 +28,9 @@ p {
     stroke-dashoffset: 166;
     stroke-width: 2;
     stroke-miterlimit: 10;
-    stroke: $color--green;
+    stroke: var(--color--green);
     fill: none;
-    animation: stroke 0.6s $curve forwards;
+    animation: stroke 0.6s var(--curve) forwards;
 }
 
 .checkmark {
@@ -42,16 +42,16 @@ p {
     stroke: #fff;
     stroke-miterlimit: 10;
     margin: 10% auto;
-    box-shadow: inset 0px 0px 0px $color--green;
+    box-shadow: inset 0px 0px 0px var(--color--green);
     animation: fill 0.4s ease-in-out 0.4s forwards,
-        scale 0.3s ease-in-out 0.9s both;
+    scale 0.3s ease-in-out 0.9s both;
 }
 
 .checkmark__check {
     transform-origin: 50% 50%;
     stroke-dasharray: 48;
     stroke-dashoffset: 48;
-    animation: stroke 0.3s $curve 0.8s forwards;
+    animation: stroke 0.3s var(--curve) 0.8s forwards;
 }
 
 @keyframes stroke {
@@ -72,7 +72,7 @@ p {
 
 @keyframes fill {
     100% {
-        box-shadow: inset 0px 0px 0px 30px $color--green;
+        box-shadow: inset 0px 0px 0px 30px var(--color--green);
     }
 }
 </style>

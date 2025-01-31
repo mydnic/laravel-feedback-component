@@ -1,3 +1,28 @@
+<script setup>
+import KustomerPopup from './Partials/Popup.vue'
+import {ref} from "vue";
+
+const props = defineProps(['params', 'labels'])
+
+const isFeedbackPopupOpen = ref(false)
+const icon = ref(props.params.icon)
+const isSpinning = ref(false)
+
+const toggle = () => {
+    isFeedbackPopupOpen.value = !isFeedbackPopupOpen.value
+    changeIcon()
+}
+const changeIcon = () => {
+    isSpinning.value = true
+    setTimeout(() => {
+        icon.value = isFeedbackPopupOpen.value
+            ? props.params.close
+            : props.params.icon
+    }, 250)
+    setTimeout(() => (isSpinning.value = false), 500)
+}
+</script>
+
 <template>
     <div class="kustomer-feedback-component" :class="{'is-open': isFeedbackPopupOpen}">
         <span class="kustomer-tooltip" v-text="labels.tooltip"></span>
@@ -15,37 +40,3 @@
         <kustomer-popup :params="params" :labels="labels"></kustomer-popup>
     </div>
 </template>
-
-<script>
-export default {
-    props: ['params', 'labels'],
-
-    data() {
-        return {
-            isFeedbackPopupOpen: false,
-            icon: this.params.icon,
-            isSpinning: false
-        }
-    },
-
-    methods: {
-        toggle() {
-            this.isFeedbackPopupOpen = !this.isFeedbackPopupOpen
-            this.changeIcon()
-        },
-        changeIcon() {
-            this.isSpinning = true
-            setTimeout(() => {
-                this.icon = this.isFeedbackPopupOpen
-                    ? this.params.close
-                    : this.params.icon
-            }, 250)
-            setTimeout(() => (this.isSpinning = false), 500)
-        }
-    },
-
-    components: {
-        'kustomer-popup': require('./Partials/Popup.vue').default
-    }
-}
-</script>
